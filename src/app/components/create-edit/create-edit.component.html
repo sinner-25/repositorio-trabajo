@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>{{ id ? 'Editar Persona' : 'Crear Persona' }}</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="guardarPersona()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput [(ngModel)]="persona.nombre" name="nombre" placeholder="Nombre">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input matInput [(ngModel)]="persona.apellido" name="apellido" placeholder="Apellido">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de Nacimiento</mat-label>
+          <input matInput [(ngModel)]="persona.fecha_nacimiento" name="fechaNacimiento" placeholder="Fecha de Nacimiento" type="date">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit">{{ id ? 'Actualizar' : 'Crear' }}</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
